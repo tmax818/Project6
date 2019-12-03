@@ -5,7 +5,11 @@
  * Due: 12/4/19
  * Description: Student created class per Project 6 instructions
  */
-package phase1;
+package phase2;
+
+import java.awt.Graphics;
+
+//import phase1.*;
 
 public class Triangle extends Shape {
     
@@ -61,5 +65,14 @@ public class Triangle extends Shape {
     
     public String toString(){
         return "Triangle: (" + getX() + ", " + getY() + "), base: " + getBase() + ", height: " + getHeight();
+    }
+    
+     public void drawShape(Graphics g) {
+        g.drawLine(getX(), getY() + (int)height,
+        getX() + (int)base, getY() + (int)height);
+        g.drawLine(getX(), getY() + (int)height,
+        getX() + (int)(base / 2), getY());
+        g.drawLine(getX() + (int)base, getY() + (int)height,
+        getX() + (int)(base / 2), getY());
     }
 }

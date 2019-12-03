@@ -3,10 +3,14 @@
  * Source Code File: Circle.java
  * Programmer: Tyler Maxwell
  * Due: 12/4/19
- * Description: Student created class per Project 6 instructions
+ * Description: Student created class per Project 6 (phase2) instructions
  */
 
-package phase1;
+package phase2;
+
+import java.awt.Graphics;
+
+//import phase1.*;
 
 public class Circle extends Shape {
     private double radius;
@@ -45,5 +49,10 @@ public class Circle extends Shape {
     
     public String toString(){
         return "Circle: (" + getX() + ", " + getY() + "), radius: " + getRadius();
+    }
+    
+     public void drawShape(Graphics g) {
+        g.drawOval(getX(), getY(), (int)(2 * radius),
+        (int)(2 * radius));
     }
 }

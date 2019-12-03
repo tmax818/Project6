@@ -3,10 +3,14 @@
  * Source Code File: Rectangle.java
  * Programmer: Tyler Maxwell
  * Due: 12/4/19
- * Description: Student created class per Project 6 instructions
+ * Description: Student created class per Project 6 (phase2) instructions
  */
 
-package phase1;
+package phase2;
+
+import java.awt.Graphics;
+
+//import phase1.*;
 
 public class Rectangle extends Shape {
     
@@ -60,6 +64,10 @@ public class Rectangle extends Shape {
     
     public String toString(){
         return "Rectangle: (" + getX() + ", " + getY() + "), width: " + getWidth() + ", height: " + getHeight();
+    }
+    
+    public void drawShape(Graphics g) {
+        g.drawRect(getX(), getY(), (int)width, (int)height);
     }
     
 }

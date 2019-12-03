@@ -6,16 +6,32 @@
  * Description: File copied from project instructions
  */
 
-
-package phase1;
-
-public class Project6 {
+package phase2;
+import javax.swing.*;
+import java.awt.*;
+/**
+*
+* Programmer: Benjamin Riveira
+*/
+public class Project6GUI {
  // Create an array to hold 100 Shape objects
  private Shape[] shapeArray = new Shape[100];
 
+ public Project6GUI() {
+ JFrame guiFrame = new JFrame();
+ CustomPanel myPanel = new CustomPanel();
+ guiFrame.setTitle("Project 6 GUI");
+ guiFrame.setSize(800, 600);
+ guiFrame.setLocation(0, 0);
+ guiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ guiFrame.add(myPanel);
+ guiFrame.setVisible(true);
+ }
+
  public static void main (String [] args) {
-    Project6 project6 = new Project6();
-    project6.run();
+
+ Project6GUI project6 = new Project6GUI();
+ project6.run();
 
  } // end of main
  public void run () {
@@ -34,7 +50,7 @@ public class Project6 {
  shapeArray[count++] = new Rectangle();
  shapeArray[count++] = new Rectangle(100, 50);
  shapeArray[count++] = new Rectangle(150, 150, 40.5, 60.5);
- /********** Fill the array region end **********/
+ /********** Fill the array region end **********/ 
  /* The following for loop loops through all objects in
  * shapeArray, invoking the toString() method on each
  * Shape object. This causes those objects to "display"
@@ -57,4 +73,14 @@ public class Project6 {
  System.out.println("\nThe total area for " + count
  + " Shape objects is " + totalArea);
  } // end of run() method
-} // end of class Project6
+ public class CustomPanel extends JPanel {
+ public void paintComponent(Graphics g) {
+ for(Shape s : shapeArray) {
+ if(s != null) {
+ s.drawShape(g);
+ }
+ }
+ repaint();
+ }
+ }
+}

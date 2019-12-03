@@ -3,10 +3,14 @@
  * Source Code File: Shape.java
  * Programmer: Tyler Maxwell
  * Due: 12/4/19
- * Description: Student created class per Project 6 instructions
+ * Description: Student created class per Project 6 (phase2) instructions
  */
 
-package phase1;
+package phase2;
+
+import java.awt.Graphics;
+
+//import phase1.*;
 
 public abstract class Shape {
     
@@ -47,6 +51,10 @@ public abstract class Shape {
         }
     }
     
+    // Abstract methods
+    
     public abstract double getArea();
+    
+    public abstract void drawShape(Graphics g);
     
 }
